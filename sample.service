@@ -1,0 +1,14 @@
+[Unit]
+Description=webserver
+Requires=network.target
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+ExecStart=java -jar /opt/sample/service.jar
+User=oleh
+Restart=always
+RestartSec=3
+Environment="PORT=8888"
